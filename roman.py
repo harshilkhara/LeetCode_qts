@@ -35,5 +35,4 @@ def romantoint(string):
 str=input("Enter a Roman Numeral: ")
 string=str.upper()
 result=romantoint(string)
-print(result)
-print("Hello World")
+print(result)	
