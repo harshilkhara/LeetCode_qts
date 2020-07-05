@@ -13,9 +13,9 @@ def roman(s):
 s=input("Enter a Roman Numeral: ")
 r=roman(s)
 print(r)
-//XXIV
-//10
-//20
-//20-1=19
-//19+5
-//24
+#XXIV
+#10
+#20
+#20-1=19
+#19+5
+#24
