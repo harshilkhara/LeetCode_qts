@@ -9,6 +9,6 @@ def twosum(nums,target):
             complementMap[complement]=i
                 
 nums=[1,2,3,4,5]
-target=9
+target=8
 twosum(nums,target)
 print(twosum(nums,target))
