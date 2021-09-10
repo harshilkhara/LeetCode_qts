@@ -1,20 +1,14 @@
 def maxSubArray(n):
-	maxSum=0
-	for i in range(len(n)):
-		if max(n[i],n[i+1])>0:
-			maxSum=+
+	total_sum=max_sum= n[0]
 
+	for i in n[1:]:
+		total_sum=max(i,total_sum+i)
+		max_sum=max(max_sum,total_sum)
+	return max_sum
 
-
-
-
-
-
-
-
-
-n=input("Enter the array: ")
+            
+n = [-2,1,-3,4,-1,2,1,-5,4]
 x=maxSubArray(n)
 print (x)
 
-##nums = [-2,1,-3,4,-1,2,1,-5,4]
+
