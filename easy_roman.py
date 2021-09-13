@@ -10,7 +10,7 @@ def roman(s):
     result += RomanDic[s[-1]]
     return result
 
-s=input("Enter a Roman Numeral: ")
+s=int(input("Enter a Roman Numeral: "))
 r=roman(s)
 print(r)
 #XXIV
