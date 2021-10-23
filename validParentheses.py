@@ -1,5 +1,5 @@
 class Solution(object):
-    def isValid(self, s):
+    def isValid(s):
         """
         :type s: str
         :rtype: bool
@@ -21,6 +21,7 @@ class Solution(object):
                 # Pop the topmost element from the stack, if it is non empty
                 # Otherwise assign a dummy value of '#' to the top_element variable
                 top_element = stack.pop() if stack else '#'
+        
 
                 # The mapping for the opening bracket in our hash and the top
                 # element of the stack don't match, return False
@@ -33,3 +34,7 @@ class Solution(object):
         # In the end, if the stack is empty, then we have a valid expression.
         # The stack won't be empty for cases like ((()
         return not stack
+    
+    s=input("Enter the string of parentheses: ")
+    result=isValid(s)
+    print (result)
