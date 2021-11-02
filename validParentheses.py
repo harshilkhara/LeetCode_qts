@@ -21,13 +21,11 @@ class Solution(object):
                 # Pop the topmost element from the stack, if it is non empty
                 # Otherwise assign a dummy value of '#' to the top_element variable
                 top_element = stack.pop() if stack else '#'
-                print(mapping[char])
-                print(top_element)
         
 
                 # The mapping for the opening bracket in our hash and the top
                 # element of the stack don't match, return False
-                if mapping[char] != top_element:        # Dictionary works in this way 
+                if mapping[char] != top_element:        # Dictionary_name[variable]= gives corresponding value
                     return False                        # mapping[char]--> mapping[')']='('
             else:
                 # We have an opening bracket, simply push it onto the stack.
