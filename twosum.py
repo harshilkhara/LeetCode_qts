@@ -18,7 +18,7 @@ def twosum(nums,target):     #Optimal method, use hash maps------Time complexity
         if num in complementMap:
             return[complementMap[num],i]     # returning dictionary's complement[num]== corresponding value
         else:
-            complementMap[complement]=i     #adding into dict()
+            complementMap[complement]=i     #adding complement into dict()
                 
 
 def brute(nums,target):    #brute force method   ---- Time complexity O(n^2)
