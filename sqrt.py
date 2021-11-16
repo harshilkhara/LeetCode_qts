@@ -4,8 +4,8 @@ def mySqrt(x):
     start=1
     end=x//2
     while start<=end:
-        mid=start+(end-start)//2
-        if mid > x/mid:
+        mid=start+(end-start)//2  #To avoid overflow we use start+(end-start)//2 instead of 
+        if mid > x/mid:                                #simple (start+end)//2
             end=mid-1
         else:
             start=mid+1
