@@ -17,7 +17,10 @@ def addBinary(a,b):
     return result
 
 
-        '''
-        c = bin(int(a,2) + int(b,2))
-        return c[2:]
-        '''
+'''
+c = bin(int(a,2) + int(b,2))
+return c[2:]
+'''
+a=input("Enter first binary string: ")
+b=input("Enter second binary string: ")
+print(addBinary(a,b))
