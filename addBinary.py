@@ -9,8 +9,8 @@ def addBinary(a,b):
 
         total= digitA + digitB + carry
         char = str(total % 2)
-        result = char + result
-        carry=total // 2
+        result = char + result    # we are adding strings here, so order of addition(appending)
+        carry=total // 2          # matters
 
     if carry:
         result= "1"+ result
