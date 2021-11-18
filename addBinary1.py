@@ -9,8 +9,6 @@ def binarytodecimal(binary):
 		i += 1
 	return decimal   
 
-
-
 def decimaltobinary(n):
 	binary,ctr,temp = 0,0,int(n)
 	while (temp>0):
@@ -19,10 +17,7 @@ def decimaltobinary(n):
 		ctr += 1
 	return binary
 
-
-
-def addBinary1(a,b):
-     
+def addBinary1(a,b):  
 	digitA=binarytodecimal(a)
 	digitB=binarytodecimal(b)
 	print(digitA)
@@ -35,3 +30,9 @@ def addBinary1(a,b):
 a=input("Enter first binary string: ")
 b=input("Enter second binary string: ")
 print(addBinary1(a,b))
+
+
+def dectobin(n):  #decimal to binary using recursion (tail recursion in printing)
+	if n >1:
+		dectobin(n//2)
+	print(n%2, end="")
