@@ -3,7 +3,7 @@ def addDigits(num): #Itereative method O(n)
 	while num:
 		sum+=num%10
 		num//=10
-		if sum>0 and num=0:
+		if sum>9 and num==0:
 			num=sum
 			sum=0
 	return sum
