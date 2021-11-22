@@ -8,9 +8,10 @@ def addBinary(a,b):
         digitB=int(b[i]) if i < len(b) else 0
 
         total= digitA + digitB + carry
-        char = str(total % 2)
-        result = char + result    # we are adding strings here, so order of addition(appending)
-        carry=total // 2          # matters
+        char = str(total % 2)     #because we want binary that is base 2 
+        result = char + result    #we are adding strings here, so order of addition(appending)matters
+
+        carry=total // 2          # taking care of carry
 
     if carry:
         result= "1"+ result
