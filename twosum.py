@@ -31,7 +31,8 @@ def brute(nums,target):    #brute force method   ---- Time complexity O(n^2)    
                     return
                 return [i,j],nums[i],nums[j]
 
-#TC O(n)    SC O(1)--> because no hash table used     Most optimized one 
+#when the array is sorted this the most optimized one #here we use two pointer approach
+#TC O(n)    SC O(1)--> because no hash table used     
 def twosum2(nums,target):
     left,right=0,len(nums)-1
     while left<right:
