@@ -1,4 +1,6 @@
-def maxProfit(prices):
+# //TC O(n)  SC O(1)
+# Two pointers approach
+def maxProfit(prices):    
 	l,r=0,1
 	maxP=0
 	while r < len(prices):
