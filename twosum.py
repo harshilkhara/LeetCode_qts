@@ -31,27 +31,47 @@ def brute(nums,target):    #brute force method   ---- Time complexity O(n^2)    
                     return
                 return [i,j],nums[i],nums[j]
 
-#when the array is sorted this the most optimized one #here we use two pointer approach
-#TC O(n)    SC O(1)--> because no hash table used     
-def twosum2(nums,target):
-    left,right=0,len(nums)-1
-    while left<right:
-        sum=nums[left]+nums[right]
-        if sum==target:
-            return [left,right]
-        elif sum<target:
-            left+=1
-        else:
-            right-=1
-    return
-
-
-            
-nums=[2,5,9,11]
-target=11
+nums=[1,2,3,4,5]
+target=8
 n=len(nums)
 print(n)
 print(twosum1(nums,target))
 print(twosum(nums,target))
 print(brute(nums,target))
-print(twosum2(nums,target))
+#<------------------------- When array is sorted ------------------------------------------->
+#when the array is sorted 
+#this the most optimized one #here we use two pointer approach
+  
+def twosum2(numbers,target1): #TC O(n)    //SC O(1)--> because no hash table used   
+    left,right=0,len(numbers)-1
+    while left<right:
+        sum=numbers[left]+numbers[right]
+        if sum==target1:
+            return [left,right]
+        elif sum<target1:
+            left+=1
+        else:
+            right-=1
+    return
+
+def twoSum3(numbers,target1):  
+    for i in range(len(numbers)):    # TC O(n logn)     iterating through loop and finding the key with binary search     //SC O(1)
+        complement=target1-numbers[i]
+        l,r=0,len(nums)-1
+        while l<=r:
+            mid=l+(r-l)//2
+            if numbers[mid]==complement:
+                return[i,mid]
+            elif numbers[mid]<complement:
+                l=mid+1
+            else:
+                r=mid-1
+    return
+
+numbers=[2,7,11,15]
+target1=9
+print(twosum2(numbers,target1))
+print(twoSum3(numbers,target1))
+
+
+
