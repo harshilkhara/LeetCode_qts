@@ -10,6 +10,12 @@ def firstUniqChar(s):
 		if hash[char]==1:
 			return idx
 	return -1
+	'''
+	for i in range (len(s)):        #Alternative for loop 
+		if hash[s[i]]==1:
+			return i
+	return -1
+	'''
 
 import collections                    #With imported library collections 
 def firstUniqChar1(s):
@@ -20,7 +26,7 @@ def firstUniqChar1(s):
 	return -1
 
 print(firstUniqChar("leetcode"))
-print(firstUniqChar1("loveleetcode"))
+print(firstUniqChar1("loveleetcode")) 
 
 
 
