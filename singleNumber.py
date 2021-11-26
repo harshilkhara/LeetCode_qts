@@ -14,8 +14,8 @@ def singleNumber(nums):  # TC O(n) // SC O(n)
 def singleNumber1(nums):     # TC O(n)   //SC O(1)
 	x=0
 	for i in nums:
-		x=x ^ i
-	return x
+		x=x ^ i              # ^ is XOR bitwise operator 
+	return x                 # returns 1 when both bits are different else 0
 
 
 print(singleNumber([4,2,1,2,1]))
