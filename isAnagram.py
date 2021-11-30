@@ -11,10 +11,10 @@ def isAnagram(s,t):    # TC O(N)  // SC O(N)
 			hash[i]=1
 
 	for j in t:
-		if j in t:
-			hash[j]+=1
+		if j in hash1:
+			hash1[j]+=1
 		else:
-			hash[j]=1
+			hash1[j]=1
 
 	if hash==hash1:
 		return True
