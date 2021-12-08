@@ -5,16 +5,15 @@ def kthfactor1(n,k):        # TC O(n)   // SC O(1)
 			if count==k:
 				return i
 			count+=1
-
-import math                 
+             
 def kthfactor(n,k):      # TC O(sqrt(n)) // SC O(1)
 	res,ans=[], []
-	for i in range(1, int(math.sqrt(n)+1)):
+	for i in range(1, int(n**0.5)+1):
 		if n%i==0:
 			if i==n//i:       #nothing but i^2==n: 
-				res.append[i]
+				res.append(i)
 			else:
-				res.append[i]
+				res.append(i)
 				ans.insert(0,n//i)
 	res.extend(ans)
 	if len(res)>=k:
