@@ -6,9 +6,9 @@
 #         self.right = right
 
 def maxDepth(root): # Recursive DFS -- TC O(n)  // SC O(n)
-        if not root:
-            return 0
-        return 1+max(self.maxDepth(root.left),self.maxDepth(root.right))
+    if not root:
+        return 0
+    return 1+max(self.maxDepth(root.left),self.maxDepth(root.right))
 
         
 def maxDepth1(root): # Iterative DFS -- TC O(n) // SC O(n)
@@ -24,16 +24,16 @@ def maxDepth1(root): # Iterative DFS -- TC O(n) // SC O(n)
 
 
 def maxDepth2(root):    # BFS Approach -- TC O(n) // SC O(n)
-        if not root:
-            return 0
-        level=0
-        q=deque([root]) #Deque means Doubly ended queue
-        while q:
-            for i in range(len(q)):
-                node=q.popleft()
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-            level+=1
-        return level
+    if not root:
+        return 0
+    level=0
+    q=deque([root]) #Deque means Doubly ended queue
+    while q:
+        for i in range(len(q)):
+            node=q.popleft()
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        level+=1
+    return level
