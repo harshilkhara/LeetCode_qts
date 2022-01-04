@@ -11,7 +11,7 @@ def thirdMax(nums):    # TC O(n) // SC O()
 import heapq      
 def thirdMax1(nums):
     heap = list()
-    heapq.heapify(heap)
+    heapq.heapify(heap)    # using heapify to convert list into heap
     for num in nums:
         if num not in heap:
             heapq.heappush(heap, num)
