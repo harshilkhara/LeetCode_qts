@@ -4,9 +4,15 @@ def thirdMax(nums):    # TC O(n) // SC O(n)
 	if n <3:
 		return(max(nums))
 	else:
-		nums.remove(max(nums))  # 1st max
+		nums.remove(max(nums))  # 1st max TC O(n) to find the max 
 		nums.remove(max(nums))  # 2nd max
 		return max(nums)        # 3rd max
+
+def thirdMax4(nums):   # Logically simplest one to understand but 
+    nums=sorted(set(nums)) # TC O(n log n)
+    if len(nums)<3:
+        return nums[-1]
+    return nums[-3]
 
 import heapq      
 def thirdMax1(nums):
@@ -81,4 +87,5 @@ print(thirdMax([3,2,5,6,12]))
 print(thirdMax1([3,2,5,6,12]))
 print(thirdMax2([12,12,4,2,12,1]))
 print(thirdMax3([12,12,4,2,12,1]))
+print(thirdMax4([3,2,5,6,3]))
 
