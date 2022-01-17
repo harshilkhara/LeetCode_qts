@@ -29,10 +29,11 @@ def lengthOfLongestSubstring(s): #TC O(2n)--> O(n) // SC O(min(m,n)) NOTE- DOES 
 			hash[s[r]]=1
 
 		while hash[s[r]] >1:    # Condition when window should be slided 
-			hash[s[l]]-=1       # removing the element that goes outside of the window 
-			l+=1                # sliding the window ahead by 1
-			res=max(res, r-l+1) #Calculating size without duplicate characters at that point
-		r+=1
+			hash[s[l]]-=1       # Removing the element that goes outside of the window 
+			l+=1                # Sliding the window ahead by 1
+		
+		res=max(res, r-l+1)     # Calculating size without duplicate characters at that point
+		r+=1                    # Expanding the window by 1 
 	return res
 
 def lengthOfLongestSubstring1(s): #TC O(2n)--> O(n) // SC O(min(m,n))
@@ -85,9 +86,22 @@ def lengthOfLongestSubstring2(s): # TC O(n) // SC O(min(m,n))
 
 	return ans
 
+def lengthOfLongestSubstring3(s): # TC O(n) // SC O(min(m,n)) //fastest one on leetcode
+	charSet=set()
+	l=0
+	res=0
+	for r in range(len(s)):
+		while s[r] in charSet:
+			charSet.remove(s[l])
+			l+=1
+		charSet.add(s[r])
+		res=max(res, r-l+1)
+	return res
+
 print(lengthOfLongestSubstring("abcabcbb"))
 print(lengthOfLongestSubstring1("bbbb"))
 print(lengthOfLongestSubstring2("pwwkew"))
+print(lengthOfLongestSubstring3("pwwkew"))
 
 
 
