@@ -1,3 +1,5 @@
+# Approach- Categorize by Count 
+
 def isAnagram(s,t):    # TC O(N)  // SC O(N)
 
 	if len(s)!=len(t):
@@ -19,6 +21,8 @@ def isAnagram(s,t):    # TC O(N)  // SC O(N)
 	if hash==hash1:
 		return True
 	return False
+
+# Approach- Categorized by sorted strings 
 
 def isAnagram1(s,t):  # TC O(nlogn)  // SC O(1)
 	if len(s)!=len(t):
