@@ -21,9 +21,9 @@ def frequencySort4(s):    # TC O(n) // SC O(n) Fastest one using bucket sort res
 
     
 def frequencySort(s):  # TC O(n log n) // SC O(n) #this is most fastest in leetcode
-    dic=Counter(s) 
+    dic=Counter(s) # TC O(n)
     ans=""
-    for k, v in dic.most_common() :
+    for k, v in dic.most_common() :  # TC O(n log n)
         ans+=k*v
     return ans
 
