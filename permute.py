@@ -40,7 +40,7 @@ def permute(nums):                           # TC O(n!) // SC O(n!)
 def permute1(nums):
 	result=[]
 	if len(nums)==1:
-		return [nums[:]]
+		return [nums[:]]    # Deep copy  ... read deep copy vs shallow copy 
 
 	for i in range(len(nums)):
 		n=nums.pop(0)
