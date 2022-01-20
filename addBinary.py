@@ -1,4 +1,4 @@
-def addBinary(a,b): 
+def addBinary(a,b):                     # TC O(max(n,m)) // SC O(max(n,m))
     a,b = a[::-1], b[::-1]
     result=""
     carry=0
@@ -18,10 +18,29 @@ def addBinary(a,b):
     return result
 
 
-'''
-c = bin(int(a,2) + int(b,2))
-return c[2:]
-'''
+#Approach- Built in functions 
+
+def addBinary1(a,b):          # TC O(n+m)
+    c = bin(int(a,2) + int(b,2))
+    return c[2:]
+
+
+#Approach- Bit manipulation 
+
+def addBinary2(a,b):               # TC O(n+m) // SC O(max(n,m))
+     x, y = int(a, 2), int(b, 2)
+     while y:
+         answer = x ^ y
+         carry = (x & y) << 1
+         x, y = answer, carry
+         #x,y= x ^ y, (x & y) <<1
+     return bin(x)[2:]
+
+
+
+
 a=input("Enter first binary string: ")
 b=input("Enter second binary string: ")
 print(addBinary(a,b))
+print(addBinary1(a,b))
+print(addBinary2(a,b))
