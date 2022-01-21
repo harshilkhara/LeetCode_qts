@@ -28,7 +28,7 @@ def minMeetingRooms(intervals): # TC O(n log n) // SC O(n)
     # The size of the heap tells us the minimum rooms required for all the meetings.
     return len(free_rooms)              # SC O(n)
 
-#Approach- 
+#Approach- Chronological order, Two pointers 
 
 def minMeetingRooms1(intervals):     # TC O(n log n) // SC O(n)
 # If there are no meetings, we don't need any rooms.
