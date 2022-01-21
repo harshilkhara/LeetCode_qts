@@ -2,7 +2,7 @@
 Approach- Very similar to permute.py
 
 '''
-def letterCombinations(digits):
+def letterCombinations(digits):    # TC O(4^n N) // SC O(n)
 	if len(digits) == 0:
 	    return []
 
@@ -31,4 +31,52 @@ def letterCombinations(digits):
 	backtrack(0, [])
 	return combinations
 
+def letterCombinations1(digits):
+	mapp={
+	    "2":['a','b','c'],
+	    "3":['d','e','f'],
+	    "4":['g','h','i'],
+	    "5":['j','k','l'],
+	    "6":['m','n','o'],
+	    "7":['p','q','r','s'],
+	    "8":['t','u','v'],
+	    "9":['w','x','y','z'],
+	}
+	s1 = []
+	if digits== "":
+	    return s1
+	elif len(digits)==1:
+	    return mapp[digits]
+	for d in digits:
+	    if s1==[]:
+	        s1 = mapp[d]
+	    else:
+	        ans =[]
+	        for i in s1:
+	            for j in mapp[d]:
+	                ans.append(i+j)
+	        s1 = ans
+	return s1
+
+def letterCombinations2(digits):
+	phn_dict = {"2": ["a", "b", "c"], "3": ["d", "e", "f"], "4": ["g", "h", "i"], "5": ["j", "k", "l"], "6": ["m", "n", "o"], "7": ["p", "q", "r", "s"], "8": ["t", "u", "v"], "9": ["w", "x", "y", "z"]}
+        
+	ans = []
+	if len(digits) == 0:
+	    return []
+	def dfs(digits, res, start):
+	    if start >= len(digits):
+	        ans.append(''.join(res))
+	        return
+	    for char in phn_dict[digits[start]]:
+	        res.append(char)
+	        dfs(digits, res, start + 1)
+	        res.pop()
+	    return
+
+	dfs(digits, [], 0)
+	return ans   
+
 print(letterCombinations("23"))
+print(letterCombinations1("23"))
+print(letterCombinations2("23"))
