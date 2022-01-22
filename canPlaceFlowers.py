@@ -1,4 +1,4 @@
-def canPlaceFlowers(flowerbed,n):
+def canPlaceFlowers(flowerbed,n): # TC O(n) // SC O(1)
 	flowerbed = [0] + flowerbed + [0]
 	for i in range(1,len(flowerbed)-1):
 	    if flowerbed[i] ==0 and flowerbed[i-1] == 0 and flowerbed[i+1] == 0:
