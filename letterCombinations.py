@@ -1,5 +1,26 @@
 '''
-Approach- Very similar to permute.py
+Very similar to permute.py
+
+Approach- Backtracking 
+
+As mentioned previously, we need to lock-in letters when we generate new letters. 
+The easiest way to save state like this is to use recursion. Our algorithm will be as follows:
+
+1) If the input is empty, return an empty array.
+
+2) Initialize a data structure (e.g. a hash map) that maps digits to their letters, for example, 
+   mapping "6" to "m", "n", and "o".
+
+3) Use a backtracking function to generate all possible combinations.
+	a) The function should take 2 primary inputs: the current combination of letters we have, 
+	   path, and the index we are currently checking.
+	b) As a base case, if our current combination of letters is the same length as the input digits, 
+	   that means we have a complete combination. Therefore, add it to our answer, and backtrack.
+	c) Otherwise, get all the letters that correspond with the current digit we are looking at, 
+	   digits[index].
+	d) Loop through these letters. For each letter, add the letter to our current path, and call 
+	   backtrack again, but move on to the next digit by incrementing index by 1.
+	e) Make sure to remove the letter from path once finished with it.
 
 '''
 def letterCombinations(digits):    # TC O(4^n N) // SC O(n)
