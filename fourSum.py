@@ -55,6 +55,10 @@ def fourSum(nums,target):  # TC O(n^(k-1))--> O(n^3) // SC O(n)
 	nums.sort()
 	return kSum(nums, target, 4)
 
+'''
+Approach - Hash Set 
+
+'''
 def fourSum1(nums,target):   # TC O(n^(k-1))--> O(n^3) // SC O(n)
     def kSum(nums,target,k):
         res=[]
