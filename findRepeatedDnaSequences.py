@@ -39,7 +39,7 @@ Voila, window slice and hash recomputation are both done in a constant time.
 
 Algorithm
 
-Iterate over the start position of sequence : from 1 to N - LN−L.
+Iterate over the start position of sequence : from 1 to N - L.
 
 	If start == 0, compute the hash of the first sequence s[0: L].
 
