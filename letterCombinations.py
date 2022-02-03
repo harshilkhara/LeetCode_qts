@@ -33,7 +33,7 @@ def letterCombinations(digits):    # TC O(4^n N) // SC O(n)
 
 	def backtrack(index, path):
 	    # If the path is the same length as digits, we have a complete combination
-	    if len(path) == len(digits):
+	    if len(path) == len(digits):         # goal
 	        combinations.append("".join(path))
 	        return # Backtrack
 	    
@@ -43,7 +43,7 @@ def letterCombinations(digits):    # TC O(4^n N) // SC O(n)
 	        # Add the letter to our current path
 	        path.append(letter)
 	        # Move on to the next digit
-	        backtrack(index + 1, path)
+	        backtrack(index + 1, path)       # choose 
 	        # Backtrack by removing the letter before moving onto the next
 	        path.pop()
 

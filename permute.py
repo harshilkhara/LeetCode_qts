@@ -19,7 +19,7 @@ backtrack(first).
 
 def permute(nums):                           # TC O(n!) // SC O(n!)
 	def backtrack(first=0):
-		if first==n:
+		if first==n:                 # goal 
 			# if all integers are used up    # step 1 --
 			output.append(nums[:])
 
@@ -28,7 +28,7 @@ def permute(nums):                           # TC O(n!) // SC O(n!)
             # in the current permutation
 			nums[first],nums[i]=nums[i],nums[first]           # step a --
 			# use next integers to complete the permutations  # step b -- 
-			backtrack(first+1)
+			backtrack(first+1)                                # choose
 			#backtrack                                        # step c -- 
 			nums[first],nums[i]=nums[i],nums[first]
 
