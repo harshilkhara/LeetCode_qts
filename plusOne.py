@@ -9,7 +9,7 @@ elements. Hence the overall space complexity of the algorithm is O(N).
 def plusOne(digits): # TC O(n) // SC O(n)  
 	n = len(digits)
 	# move along the input array starting from the end
-	for i in range(n):
+	for i in range(n):  # for i in range(n-1,-1,-1): also works 
 	    idx = n - 1 - i
 	    # set all the nines at the end of array to zeros
 	    if digits[idx] == 9:
