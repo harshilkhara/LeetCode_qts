@@ -10,7 +10,6 @@ def findDifferences(s,t): # TC O(n log n) // SC O(1) or SC O(n) depending on sor
 	    if sorted_s[i] != sorted_t[i]:
 	        return sorted_t[i]
 	    i += 1
-
 	return sorted_t[i]
 
 #Approach- Hashmap
