@@ -1,4 +1,4 @@
-# Approach- Brute Force                 NOTE- t > s  and t = s + 1
+#Approach- Brute Force                 NOTE- t > s  and t = s + 1
 def findDifferences(s,t): # TC O(n log n) // SC O(1) or SC O(n) depending on sorting algo
 	# Sort both the strings
 	sorted_s = sorted(s)
@@ -43,7 +43,16 @@ def findDifferences2(s,t): # TC O(n) // SC O(n)
 	# What is left after XORing everything is the difference.
 	return chr(ch)
 
+#Approach - Order sum and difference 
+def findDifferences3(s,t):
+	s_ord, t_ord = 0, 0
+	for ss in s:
+	 s_ord += ord(ss)
+	for tt in t:
+	 t_ord += ord(tt)
+	return chr(t_ord - s_ord)
+
 print(findDifferences("abcd","abcde"))
 print(findDifferences1("abcd","abcde"))
 print(findDifferences2("a","aa"))
-
+print(findDifferences3("a","ab"))
