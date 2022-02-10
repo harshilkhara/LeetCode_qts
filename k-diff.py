@@ -13,7 +13,34 @@ def findPairs(nums,k): # TC O(n log n) + O(n^2) --> O(n^2) // SC O(n)+O(1) --> O
                 result += 1
     return result
 
-#Approach 2- Two Pointers 
+'''
+Approach 2- Two Pointers 
+
+Take the difference between the numbers which left and right pointers point.
+
+If it is less than k, we increment the right pointer.
+    If left and right pointers are pointing to the same number, we increment the right pointer too.
+If it is greater than k, we increment the left pointer.
+If it is exactly k, we have found our pair, we increment our placeholder result and increment left 
+pointer.
+
+The idea behind the behavior of incrementing left and right pointers in the manner above is similar 
+to:
+
+Extending the range between left and right pointers when the difference between left and right 
+pointers is less than k (i.e. the range is too small).
+    Therefore, we extend the range (by incrementing the right pointer) when left and right pointer 
+    are pointing to the same number.
+Contracting the range between left and right pointers when the difference between left and right 
+pointers is more than k (i.e. the range is too large).
+
+This is the core of the idea but there is another issue which we have to take care of to make 
+everything work correctly. We have to make sure duplicate pairs are not counted repeatedly. 
+In order to do so, whenever we have a pair whose difference matches with k, we keep incrementing the 
+left pointer as long as the incremented left pointer points to the number which is equal to the 
+previous number.
+
+'''
 
 def findPairs1(nums,k): # TC O(n log n) // SC O(n)+O(1) --> O(n)
     nums = sorted(nums) # TC O(n log n) // SC O(n) or O(log n)
