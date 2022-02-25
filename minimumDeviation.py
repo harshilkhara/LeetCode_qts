@@ -38,7 +38,7 @@ O(K log(N)) = O (N log(M) log(N)).
 In worst case, we need to push every candidate number into evens, and the size of evens is 
 O(N). Hence, the total time complexity is O(K .log(N)) = O(N log(M) log(N)).
 
-Space Complexity: O(N), since there are at most NN elements in evens.
+Space Complexity: O(N), since there are at most N elements in evens.
 
 '''
 import heapq
@@ -60,8 +60,8 @@ def minimumDeviation(nums): # TC O(K log n) where k= (n log m)  // SC O(n)
 	    maximum_value = -heapq.heappop(evens)     # Always pops evens[0] i.e. the first element
 	    min_deviation = min(min_deviation, maximum_value-minimum)
 	    if maximum_value % 2 == 0:
-	        minimum = min(minimum, maximum_value//2)      # Decreasing even numbers
-	        heapq.heappush(evens, -maximum_value//2)
+	        minimum = min(minimum, maximum_value//2)      
+	        heapq.heappush(evens, -maximum_value//2)     # Decreasing even numbers
 	    else:
 	        # if the maximum is odd, break and return
 	        break
@@ -69,3 +69,4 @@ def minimumDeviation(nums): # TC O(K log n) where k= (n log m)  // SC O(n)
 
 print(minimumDeviation([1,2,3,4]))
 print(minimumDeviation([2,10,8]))
+print(minimumDeviation([4,1,5,20,3]))
