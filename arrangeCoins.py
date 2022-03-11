@@ -13,6 +13,7 @@ def arrangeCoins(n): # TC O (log n) // SC O(1)
 	return r 
 
 #Approach 2- Math 
+
 def arrangeCoins1(n): # TC O(1) // SC O(1)
 	return (int) ((2*n+0.25)**0.5-0.5)
 
