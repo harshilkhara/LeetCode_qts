@@ -4,9 +4,9 @@ Find number of 1 bits in n
 Approach 1- loop and flip 
 
 The solution is straight-forward. We check each of the 32 bits of the number. 
-If the bit is 1, we add one to the number of 11-bits.
+If the bit is 1, we add one to the number of 1-bits.
 
-We can check the ith bit of a number using a bit mask. We start with a mask m=1m=1, 
+We can check the ith bit of a number using a bit mask. We start with a mask m=1, 
 because the binary representation of 1 is,
 
 00000000000000000000000000000001 Clearly, a logical AND between any number and the mask 1 
