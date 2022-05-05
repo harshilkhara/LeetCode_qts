@@ -35,8 +35,14 @@ def moveZeros3(nums): # TC O(n) // SC O(1)
 	nums+=[0]*zeros
 	return nums
 
+#Approach 4- Sorting 
+def moveZeros4(nums): # TC O(n log n) // SC O(1)
+	nums.sort(key=lambda n:n==0)
+	return nums
+
 print(moveZeros([0,1,0,3,12]))
 print(moveZeros1([0,1,0,3,12]))
 print(moveZeros2([0,1,0,3,12]))
 print(moveZeros3([0,1,0,3,12]))
 print(moveZeros3([1,0,6,5,0]))
+print(moveZeros4([1,0,6,5,0]))
