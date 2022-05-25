@@ -1,3 +1,4 @@
+# Very much inspired from lengthOfLIS.py
 # Approach 1- Sort + Longest Increasing Subsequence (LIS)
 from bisect import bisect_left
 def maxEnvelopes(arr): # TC O(n log n) // SC O(n)
