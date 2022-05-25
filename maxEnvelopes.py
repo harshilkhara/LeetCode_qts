@@ -3,7 +3,8 @@
 from bisect import bisect_left
 def maxEnvelopes(arr): # TC O(n log n) // SC O(n)
 	arr.sort(key=lambda x: (x[0], -x[1]))
-
+	print(arr)
+	
 	def lis(nums):
 	    dp = []
 	    for i in range(len(nums)):
