@@ -1,3 +1,4 @@
+#Approach 1- Binary Search
 def mySqrt(x):          #Time complexity- O(log x) (Binary search tree)
     if x==0 or x==1:
         return x
@@ -12,5 +13,29 @@ def mySqrt(x):          #Time complexity- O(log x) (Binary search tree)
             
     return start-1
 
-x=int(input("Enter the number: "))
-print(mySqrt(x))
+#Approach 2- Recursion + Bit shifts 
+def mySqrt1(x):
+    if x < 2:
+        return x
+
+    left=mySqrt(x>>2)<<1
+    right=left+1
+
+    return left if right*right > x else right 
+
+#Approach 3-  Newton's method (It is the fastest method)
+def mySqrt2(x): # TC O(log n)
+    if x < 2:
+        return x 
+
+    x0 = x
+    x1 = (x0 + x / x0) / 2
+    while abs(x0 - x1) >= 1:
+        x0 = x1
+        x1 = (x0 + x / x0) / 2        
+
+    return int(x1)
+
+print(mySqrt(16))
+print(mySqrt1(49))
+print(mySqrt2(729))
