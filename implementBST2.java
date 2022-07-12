@@ -117,13 +117,93 @@ class BST2{
     	return root;
     }
 
+    // Deleting a node 
+
+    /*
+
+    1) Successor = "after node", i.e. the next node, or the smallest node after the current one.
+       It's also the next node in the inorder traversal. To find a successor, 
+       go to the right once and then as many times to the left as you could.
+
+    2) Predecessor = "before node", i.e. the previous node, or the largest node before the 
+       current one. It's also the previous node in the inorder traversal. To find a predecessor, 
+       go to the left once and then as many times to the right as you could.
+
+	Algorithm- 
+
+	If key > root.val then delete the node to delete is in the right subtree 
+	root.right = deleteNode(root.right, key).
+
+	If key < root.val then delete the node to delete is in the left subtree 
+	root.left = deleteNode(root.left, key).
+
+	If key == root.val then the node to delete is right here. Let's do it :
+
+		If the node is a leaf, the delete process is straightforward : root = null.
+
+		If the node is not a leaf and has the right child, then replace the node 
+		value by a successor value root.val = successor.val, and then recursively 
+		delete the successor in the right subtree root.right = deleteNode(root.right, root.val).
+
+		If the node is not a leaf and has only the left child, then replace the node 
+		value by a predecessor value root.val = predecessor.val, and then recursively 
+		delete the predecessor in the left subtree root.left = deleteNode(root.left, root.val).
+
+	Return root.
+
+	*/
+
+
+    /*
+  One step right and then always left
+  */
+  public static int successor(Node root) {
+    root = root.right;
+    while (root.left != null) root = root.left;
+    return root.val;
+  }
+
+  /*
+  One step left and then always right
+  */
+  public static int predecessor(Node root) {
+    root = root.left;
+    while (root.right != null) root = root.right;
+    return root.val;
+  }
+
+  public static Node deleteNode(Node root, int key) {
+    if (root == null) return null;
+
+    // delete from the right subtree
+    if (key > root.val) root.right = deleteNode(root.right, key);
+    // delete from the left subtree
+    else if (key < root.val) root.left = deleteNode(root.left, key);
+    // delete the current node
+    else {
+      // the node is a leaf
+      if (root.left == null && root.right == null) root = null;
+      // the node is not a leaf and has a right child
+      else if (root.right != null) {
+        root.val = successor(root);
+        root.right = deleteNode(root.right, root.val);
+      }
+      // the node is not a leaf, has no right child, and has a left child    
+      else {
+        root.val = predecessor(root);
+        root.left = deleteNode(root.left, root.val);
+      }
+    }
+    return root;
+  }
+
 
 }
 class implementBST2{
 	public static void main(String [] args){
     BST2 bst2= new BST2();
     int val= 5;
-    int [] keys= {2,1,4,val};
+    int [] keys= {2,1,4};
 
     Node root=bst2.constructBST(keys); 
     System.out.println("Inorder -");
@@ -136,8 +216,13 @@ class implementBST2{
     bst2.preorder(root);
 	System.out.println("");
 	System.out.println("Search root - ");
-    Node search=bst2.searchBST(root,7);
+    Node search=bst2.searchBST(root,2);
     bst2.preorder(search);
+	System.out.println("");
+	System.out.println("After Deleting the given node - ");
+    bst2.deleteNode(root,1);
+    bst2.preorder(root);
+
 
 
 	}
