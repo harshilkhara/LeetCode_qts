@@ -220,7 +220,7 @@ class implementBST2{
     bst2.preorder(search);
 	System.out.println("");
 	System.out.println("After Deleting the given node - ");
-    bst2.deleteNode(root,1);
+    bst2.deleteNode(root,2);
     bst2.preorder(root);
 
 
