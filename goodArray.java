@@ -1,5 +1,8 @@
 // Asked in Goldman Sachs interview
 // https://www.desiqna.in/6085/goldman-coding-question-solution-engineering-campus-program
+
+// https://leetcode.com/problems/range-product-queries-of-powers/discuss/2740795
+// /simple-java-solution
 import java.util.*;
 class Solution{ // TC O(n*m) SC O(n)
 	public List<Integer> goodArray(int n, List<List<Integer>> queries){
