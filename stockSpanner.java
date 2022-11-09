@@ -1,9 +1,9 @@
 import java.util.*;
 // Approach 1- Monotonic Stack
-class Solution{
+class Solution{ // TC O(1)--> Amortized analysis  SC O(n)
 	Stack<int[]> stack; 
 
-	public Solution(){
+	public Solution(){ 
 		stack= new Stack<>();
 	}
 
