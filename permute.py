@@ -53,5 +53,25 @@ def permute1(nums):
 
 	return result
 
+def permute2(nums):
+	def backtrack(nums,permutations,seen):
+		if len(permutations)==len(nums):
+			answer.append(list(permutations))
+			return 
+
+		for i in range(len(nums)):
+			if nums[i] not in seen:
+				seen.add(nums[i])
+				permutations.append(nums[i])
+				backtrack(nums,permutations,seen)
+				seen.remove(nums[i])
+				permutations.pop()
+
+	answer=[]
+	seen=set()
+	backtrack(nums,[],seen)
+	return answer
+
 print(permute([1,2,3]))
 print(permute1([1,2,3]))
+print(permute2([1,2,3]))
