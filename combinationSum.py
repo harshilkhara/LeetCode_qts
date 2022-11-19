@@ -20,3 +20,4 @@ def combinationSum(candidates,target): # TC O(N^(T/M+1)) // SC O(T/M)
 	return results
 
 print(combinationSum([2,3,6,7],7))
+print(combinationSum([1,2,3],4))
