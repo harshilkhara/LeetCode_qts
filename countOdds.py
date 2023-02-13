@@ -1,3 +1,4 @@
+# Approach 1- Maths
 def countOdds(low,high): # TC O(1) // SC O(1)
 	if low%2==0:
 		low+=1
