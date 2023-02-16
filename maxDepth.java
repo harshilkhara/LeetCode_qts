@@ -26,11 +26,11 @@ class BinaryTree{
 		if (root==null) return 0; 
 		return (1+Math.max(maxDepth(root.left),maxDepth(root.right)));
 	}
-
+	
 	// Iterative Approach TC O(N) SC O(N) or O(log n)
 	public static int maxDepth1(Node root) {
-    LinkedList<Node> stack = new LinkedList<>();
-    LinkedList<Integer> depths = new LinkedList<>();
+    List<Node> stack = new LinkedList<Node>();
+    List<Integer> depths = new LinkedList<Integer>();
     if (root == null) return 0;
 
     stack.add(root);
@@ -50,8 +50,8 @@ class BinaryTree{
     }
     return depth;
   }
-
-  public static void inorder(Node root)
+  
+  public void inorder(Node root)
     {
         if (root == null) {
             return;
@@ -78,7 +78,7 @@ class maxDepth{
 		bt.inorder(bt.root);
 		System.out.println("");
 		System.out.println("Depth of the tree - ");
-		System.out.println(bt.maxDepth1(bt.root));
+		System.out.println(bt.maxDepth(bt.root));
 		
 	}
 }
