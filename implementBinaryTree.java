@@ -17,6 +17,21 @@ class BinaryTree{
 		System.out.print(root.val+ " ");
 		inorder(root.right);
 	}
+
+	public void preorder(Node root){
+        if(root==null) return;
+        System.out.print(root.val+ " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
+    public void postorder(Node root){
+        if(root==null) return;
+        
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.val+ " ");
+    }
 }
 
 class implementBinaryTree{
