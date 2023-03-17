@@ -1,13 +1,42 @@
 import java.util.*;
+// with hashmaps
 class TrieNode{
-
 	HashMap<Character, TrieNode> children= new HashMap<Character,TrieNode>();
 	boolean word=false;
 
 	public TrieNode(){
-
 	}
-	
+}
+
+// Instead of hashmaps we use arrays here
+class TrieNode1{
+
+    // R links to node children
+    private TrieNode[] links;
+
+    private final int R = 26;
+
+    private boolean isEnd;
+
+    public TrieNode() {
+        links = new TrieNode[R];
+    }
+
+    public boolean containsKey(char ch) {
+        return links[ch -'a'] != null;
+    }
+    public TrieNode get(char ch) {
+        return links[ch -'a'];
+    }
+    public void put(char ch, TrieNode node) {
+        links[ch -'a'] = node;
+    }
+    public void setEnd() {
+        isEnd = true;
+    }
+    public boolean isEnd() {
+        return isEnd;
+    }
 }
 
 class Trie{
@@ -59,7 +88,6 @@ class Trie{
 }
 
 class implementTrie{
-
 	public static void main(String [] args){
 		Trie t= new Trie();
 		t.insert("harshil");
@@ -71,6 +99,5 @@ class implementTrie{
 		System.out.println(t.startsWith("khe")); // true
 		System.out.println(t.search("khara"));   // true
 		System.out.println(t.startsWith("Khara"));   // false
-
 	}
 }
