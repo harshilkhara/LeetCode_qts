@@ -42,7 +42,7 @@ class DLLNode {
     }
 };
 
-var BrowserHistory = function(homepage) {
+var BrowserHistory1= function(homepage) {
     // 'homepage' is the first visited URL.
     this.linkedListHead = new DLLNode(homepage);
     this.current = this.linkedListHead;
@@ -75,7 +75,8 @@ BrowserHistory.prototype.forward = function(steps) {
     return this.current.data;
 };
 
-var BrowserHistory = function(homepage) {
+// Approach 3- Dynamic List or array
+var BrowserHistory2 = function(homepage) {
     // 'homepage' is the first visited URL.
     this.visitedURLs = [homepage]
     this.currURL = 0; 
