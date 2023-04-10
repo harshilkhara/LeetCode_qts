@@ -1,29 +1,29 @@
 import java.util.*;
-public class validParentheses {
-
-	public static void main(String[] args) {
-		String s= "([])";
-		HashMap<Character, Character> map= new HashMap<>();
-		Stack<Character> stack= new Stack<>();
+class Solution{ // TC O(n) SC O(n)
+	public boolean validParentheses(String s){ 
+		Map<Character, Character> map=new HashMap<>();
 		map.put(')', '(');
 		map.put('}', '{');
 		map.put(']', '[');
-		for (int i=0; i<s.length();i++) {
-			char c=s.charAt(i);
-			if (map.containsKey(c)) {
-				char top_element= (stack.empty()) ? '#' : stack.pop();
-				
-				if (top_element!=map.get(c)) {
-					System.out.println(false);
-				} 
-				}else {
-					stack.push(c);
+		Stack<Character> stack=new Stack<>();
+		for(char c: s.toCharArray()){
+			if(map.containsKey(c)){
+				char topElement= stack.isEmpty() ? '#': stack.pop();
+				if(topElement!=map.get(c)){
+					return false;
+				}
+			} else {
+				stack.push(c);
 			}
-			
 		}
-		System.out.println(stack.isEmpty());
-		
-
+		return stack.isEmpty();
 	}
+}
 
+class validParentheses{
+	public static void main(String[] args) {
+		String x= "([])";
+		Solution s= new Solution();
+		System.out.println(s.validParentheses(x));
+	}
 }
