@@ -1,0 +1,23 @@
+        -:    0:Source:checkEven.cpp
+        -:    0:Graph:checkEven.gcno
+        -:    0:Data:checkEven.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include <iostream>
+        -:    2:
+        -:    3:using namespace std;
+        -:    4:
+        4:    5:bool checkEven(int n){
+        4:    6:	if(n%2==0){
+        2:    7:		return 1;
+        -:    8:	} else {
+        2:    9:		return 0;
+        -:   10:	}
+        -:   11:	
+        4:   12:}
+        -:   13:
+        -:   14:// int main(){
+        -:   15:// 	int res = checkEven(4);
+        -:   16:// 	cout << res << endl;
+        -:   17:// 	return 0;
+        -:   18:// }
